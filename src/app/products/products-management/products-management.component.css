@@ -1,0 +1,10 @@
+a {
+    display: block;
+    font-size: 20px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+button {
+    margin: 20px;
+}

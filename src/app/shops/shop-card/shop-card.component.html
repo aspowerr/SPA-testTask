@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{shop.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Адрес: ул.{{shop.street}}, д.{{shop.house}}</h6>
+    <p class="card-text">Режим работы: {{shop.startWork}}-{{shop.endWork}}</p>
+    <a class="card-link" [routerLink]="['/shop', shop.id, 'update']">Редактировать</a>
+    <a class="card-link" [routerLink]="['/shop', shop.id, 'product']">Смотреть товары</a>
+  </div>
+</div>

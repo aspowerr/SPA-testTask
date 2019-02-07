@@ -1,0 +1,41 @@
+<form #shopForm="ngForm" class="formAddShop" (ngSubmit)="saveShop()">
+  <h3 class="font-weight-light">Магазин</h3>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text " id="basic-addon1">Наименование</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Name" aria-describedby="basic-addon1" required [(ngModel)]="model.name"
+    name="name">
+</div>
+
+<div>Адрес</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text " id="basic-addon1">ул.</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Street" aria-describedby="basic-addon1" required [(ngModel)]="model.street"
+    name="street">
+  <div class="input-group-prepend">
+    <span class="input-group-text " id="basic-addon1">д.</span>
+  </div>
+  <input type="number" class="form-control" aria-label="House" aria-describedby="basic-addon1" required [(ngModel)]="model.house"
+    name="house">
+</div>
+
+<div>Режим работы</div>
+<div class="workTimeBlock">
+  <div class="form-group col-md-4">
+    <label for="inputState">с</label>
+    <select id="inputState" class="form-control" required [(ngModel)]="model.startWork" name="startWork">
+      <option *ngFor="let time of times">{{time}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">до</label>
+    <select id="inputState" class="form-control" required [(ngModel)]="model.endWork" name="endWork">
+      <option *ngFor="let time of times">{{time}}</option>
+    </select>
+  </div>
+</div>
+<button type="submit" [disabled]="!shopForm.form.valid" class="btn btn-secondary" id="okButtonShop">OK</button>
+</form>

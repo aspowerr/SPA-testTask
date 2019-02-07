@@ -1,0 +1,20 @@
+<form #productForm="ngForm" (ngSubmit)="saveProduct()">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Название</span>
+    </div>
+    <input name="ProductName" type="text" class="form-control" aria-label="NameProduct" aria-describedby="basic-addon1"
+      [(ngModel)]="model.name" required>
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Описание</span>
+    </div>
+    <input name="Productdescription" type="text" class="form-control" aria-label="description" aria-describedby="basic-addon1"
+      [(ngModel)]="model.description" required>
+  </div>
+
+  <button type="submit" class="btn btn-secondary" [disabled]="!productForm.form.valid">OK</button>
+  <button type="button" class="btn btn-secondary" [disabled]="!productForm.form.valid" (click)="deleteProduct()">Удалить</button>
+</form>
